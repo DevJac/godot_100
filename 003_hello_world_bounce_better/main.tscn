@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjph75qio0v32"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_ayuin"]
+
+[sub_resource type="SystemFont" id="SystemFont_keg1p"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_n7cfj"]
+font = SubResource("SystemFont_keg1p")
+font_size = 80
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ayuin")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 322.0
+offset_right = 548.0
+offset_bottom = 432.0
+text = "Hello World"
+label_settings = SubResource("LabelSettings_n7cfj")
