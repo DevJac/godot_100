@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://dft04m4aaeykt"]
+
+[ext_resource type="Texture2D" uid="uid://dc223ya2p8pin" path="res://icon.svg" id="1_eni5i"]
+[ext_resource type="Shader" path="res://shadow.gdshader" id="2_v2vyy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0gu0l"]
+shader = ExtResource("2_v2vyy")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(576, 320)
+scale = Vector2(10, 6)
+texture = ExtResource("1_eni5i")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+self_modulate = Color(0, 0, 0, 0.498039)
+
+[node name="Sprite2D Shadow2" type="Sprite2D" parent="CanvasGroup"]
+material = SubResource("ShaderMaterial_0gu0l")
+position = Vector2(624, 224)
+scale = Vector2(2, 2)
+texture = ExtResource("1_eni5i")
+
+[node name="Sprite2D Shadow" type="Sprite2D" parent="CanvasGroup"]
+material = SubResource("ShaderMaterial_0gu0l")
+position = Vector2(472, 224)
+scale = Vector2(2, 2)
+texture = ExtResource("1_eni5i")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(592, 192)
+scale = Vector2(2, 2)
+texture = ExtResource("1_eni5i")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Sprite2D2"]
+position = Vector2(16, 16)
+remote_path = NodePath("../../CanvasGroup/Sprite2D Shadow2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(440, 192)
+scale = Vector2(2, 2)
+texture = ExtResource("1_eni5i")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Sprite2D"]
+position = Vector2(16, 16)
+remote_path = NodePath("../../CanvasGroup/Sprite2D Shadow")
