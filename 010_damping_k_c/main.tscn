@@ -1,0 +1,60 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmo245lhkfo1v"]
+
+[ext_resource type="Script" path="res://click_and_drag.gd" id="1_cr2wi"]
+[ext_resource type="Texture2D" uid="uid://o6w4dgseemtf" path="res://icon.svg" id="2_kfd5f"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 83.0
+offset_bottom = 86.0
+text = "Move
+Here"
+
+[node name="SpriteControl" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 200.0
+offset_bottom = 200.0
+script = ExtResource("1_cr2wi")
+
+[node name="Sprite2D" type="Sprite2D" parent="SpriteControl"]
+position = Vector2(96, 96)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_kfd5f")
+
+[node name="SpriteControl2" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 8.0
+offset_top = 208.0
+offset_right = 200.0
+offset_bottom = 400.0
+script = ExtResource("1_cr2wi")
+
+[node name="Sprite2D" type="Sprite2D" parent="SpriteControl2"]
+position = Vector2(96, 96)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_kfd5f")
+
+[node name="SpriteControl3" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 8.0
+offset_top = 408.0
+offset_right = 200.0
+offset_bottom = 600.0
+script = ExtResource("1_cr2wi")
+
+[node name="Sprite2D" type="Sprite2D" parent="SpriteControl3"]
+position = Vector2(96, 96)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_kfd5f")
