@@ -5,6 +5,10 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_440qu"]
 shader = ExtResource("1_r2rt5")
+shader_parameter/fov = 0.5
+shader_parameter/inset = 0.0
+shader_parameter/x_rot = 0.0
+shader_parameter/y_rot = 45.0
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -16,6 +20,6 @@ grow_vertical = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_440qu")
-position = Vector2(320, 320)
-scale = Vector2(3, 3)
+position = Vector2(256, 320)
+scale = Vector2(2, 3)
 texture = ExtResource("2_8ssmo")
