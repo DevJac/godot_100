@@ -4,7 +4,6 @@ extends Sprite2D
 
 var grabbed := false
 var grab_offset := Vector2.ZERO
-var number: int = 0
 
 
 func _on_control_gui_input(event: InputEvent) -> void:
@@ -22,5 +21,4 @@ func _on_control_mouse_entered() -> void:
 
 
 func _on_control_mouse_exited() -> void:
-	if not grabbed:
-		self.scale = Vector2.ONE
+	self.scale = Vector2.ONE
