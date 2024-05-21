@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://drqeckacjawt"]
+
+[ext_resource type="Texture2D" uid="uid://dw6kdbkwh0exb" path="res://icon1.png" id="1_fgl5f"]
+[ext_resource type="Script" path="res://card.gd" id="2_g0w8q"]
+
+[node name="Card" type="Sprite2D"]
+texture = ExtResource("1_fgl5f")
+script = ExtResource("2_g0w8q")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = -64.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+editor_only = false
+
+[connection signal="gui_input" from="Control" to="." method="_on_control_gui_input"]
+[connection signal="mouse_entered" from="Control" to="." method="_on_control_mouse_entered"]
+[connection signal="mouse_exited" from="Control" to="." method="_on_control_mouse_exited"]

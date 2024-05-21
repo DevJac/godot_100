@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://dyxcpefkdk1y"]
+
+[ext_resource type="Script" path="res://row_of_cards.gd" id="1_1svsm"]
+[ext_resource type="PackedScene" uid="uid://drqeckacjawt" path="res://card.tscn" id="2_yg0kk"]
+[ext_resource type="Texture2D" uid="uid://dhev6q6wt1otc" path="res://icon2.png" id="4_xerch"]
+[ext_resource type="Texture2D" uid="uid://db0jhghi7xjf4" path="res://icon3.png" id="5_4t5eh"]
+[ext_resource type="Texture2D" uid="uid://cc7uqbpiwb0kx" path="res://icon4.png" id="6_lbm5r"]
+
+[node name="RowOfCards" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1svsm")
+
+[node name="Card1" parent="." instance=ExtResource("2_yg0kk")]
+
+[node name="Card2" parent="." instance=ExtResource("2_yg0kk")]
+texture = ExtResource("4_xerch")
+
+[node name="Card3" parent="." instance=ExtResource("2_yg0kk")]
+texture = ExtResource("5_4t5eh")
+
+[node name="Card4" parent="." instance=ExtResource("2_yg0kk")]
+texture = ExtResource("6_lbm5r")
