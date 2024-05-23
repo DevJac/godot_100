@@ -14,6 +14,10 @@ config/name="Card Order Problem"
 run/main_scene="res://row_of_cards.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 
+[display]
+
+window/vsync/vsync_mode=0
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

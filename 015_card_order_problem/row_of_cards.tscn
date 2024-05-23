@@ -1,13 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://dyxcpefkdk1y"]
+[gd_scene load_steps=9 format=3 uid="uid://dyxcpefkdk1y"]
 
 [ext_resource type="Script" path="res://row_of_cards.gd" id="1_1svsm"]
 [ext_resource type="PackedScene" uid="uid://drqeckacjawt" path="res://card.tscn" id="2_yg0kk"]
 [ext_resource type="Texture2D" uid="uid://dhev6q6wt1otc" path="res://icon2.png" id="4_xerch"]
 [ext_resource type="Texture2D" uid="uid://db0jhghi7xjf4" path="res://icon3.png" id="5_4t5eh"]
+[ext_resource type="Script" path="res://shuffle.gd" id="6_e4w4c"]
 [ext_resource type="Texture2D" uid="uid://cc7uqbpiwb0kx" path="res://icon4.png" id="6_lbm5r"]
+[ext_resource type="Script" path="res://duplicate.gd" id="7_3kf2i"]
 
-[node name="RowOfCards" type="Control"]
+[sub_resource type="Theme" id="Theme_no8d7"]
+default_font_size = 80
+
+[node name="Control" type="Control"]
 layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RowOfCards" type="Control" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -15,13 +26,34 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1svsm")
 
-[node name="Card1" parent="." instance=ExtResource("2_yg0kk")]
+[node name="Card1" parent="RowOfCards" instance=ExtResource("2_yg0kk")]
 
-[node name="Card2" parent="." instance=ExtResource("2_yg0kk")]
+[node name="Card2" parent="RowOfCards" instance=ExtResource("2_yg0kk")]
 texture = ExtResource("4_xerch")
 
-[node name="Card3" parent="." instance=ExtResource("2_yg0kk")]
+[node name="Card3" parent="RowOfCards" instance=ExtResource("2_yg0kk")]
 texture = ExtResource("5_4t5eh")
 
-[node name="Card4" parent="." instance=ExtResource("2_yg0kk")]
+[node name="Card4" parent="RowOfCards" instance=ExtResource("2_yg0kk")]
 texture = ExtResource("6_lbm5r")
+
+[node name="ShuffleButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 768.0
+offset_top = 448.0
+offset_right = 1048.0
+offset_bottom = 566.0
+theme = SubResource("Theme_no8d7")
+text = "Shuffle"
+script = ExtResource("6_e4w4c")
+
+[node name="DuplicateButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 712.0
+offset_top = 296.0
+offset_right = 1087.0
+offset_bottom = 414.0
+theme_override_font_sizes/font_size = 80
+text = "Duplicate
+"
+script = ExtResource("7_3kf2i")

@@ -4,6 +4,8 @@ extends Sprite2D
 
 var grabbed := false
 var grab_offset := Vector2.ZERO
+var hovered := false
+var index: int = 0
 
 
 func _on_control_gui_input(event: InputEvent) -> void:
@@ -16,9 +18,20 @@ func _on_control_gui_input(event: InputEvent) -> void:
 			self.global_position = event.global_position - self.grab_offset
 
 
+func _process(_delta: float) -> void:
+	# The following line can only unset hovered.
+	# It's an extra check for when a card moves, because moving a node will
+	# not trigger the mouse_existed signal.
+	hovered = hovered and get_rect().has_point(get_local_mouse_position())
+	if grabbed or hovered:
+		scale = Vector2.ONE * 1.1
+	else:
+		scale = Vector2.ONE
+
+
 func _on_control_mouse_entered() -> void:
-	self.scale = Vector2.ONE * 1.2
+	hovered = true
 
 
 func _on_control_mouse_exited() -> void:
-	self.scale = Vector2.ONE
+	hovered = false
