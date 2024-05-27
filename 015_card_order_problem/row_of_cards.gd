@@ -56,15 +56,10 @@ func sync_card_order_to_child_order():
 func sync_to_scene_tree(co_for_scene_tree):
 	for card_i: int in co_for_scene_tree.size():
 		var card: Card = co_for_scene_tree[card_i]
-		var found_matching_child: bool = false
-		for child_i: int in range(card_i, get_child_count()):
-			var child: Card = get_child(child_i)
-			if card == child:
-				found_matching_child = true
-				if card_i != child_i:
-					move_child(child, card_i)
-					break
-		if not found_matching_child:
+		if card.get_parent() == self:
+			if card.get_index() != card_i:
+				move_child(card, card_i)
+		else:
 			add_child(card)
 			move_child(card, card_i)
 	for i in range(co_for_scene_tree.size(), get_child_count()):
