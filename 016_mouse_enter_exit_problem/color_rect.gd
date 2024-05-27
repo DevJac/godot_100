@@ -9,11 +9,20 @@ func _ready() -> void:
 		'timeout',
 		func move():
 			if position == Vector2(192, 192):
-				position = Vector2(576, 192)
+				move_then_set_color(Vector2(576, 192))
 			elif position == Vector2(576, 192):
-				position = Vector2(192, 192)
+				move_then_set_color(Vector2(192, 192))
+
 	)
 	add_child(timer)
+
+
+func move_then_set_color(new_position: Vector2):
+	position = new_position
+	if get_global_rect().has_point(get_global_mouse_position()):
+		_on_mouse_entered()
+	else:
+		_on_mouse_exited()
 
 
 func _on_mouse_entered() -> void:
