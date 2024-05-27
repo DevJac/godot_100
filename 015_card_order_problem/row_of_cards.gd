@@ -41,16 +41,27 @@ func nearest_card_position(x: Vector2) -> Vector2:
 
 
 func sync_card_order_to_child_order():
-	var co_for_scene_tree: Array[Card] = []
-	for i in card_order.size():
-		var card: Card = card_order[i]
-		card.index = i
-		co_for_scene_tree.push_back(card)
-	co_for_scene_tree.sort_custom(func(c1, c2):
+
+	# Lambda function is named for debugging purposes.
+	var custom_comparator := func custom_comparator(c1, c2) -> int:
+		# Returns 0 if equal, and 1 if c1 < c2; -1 otherwise.
 		if not c1.grabbed and c2.grabbed:
+			return 1
+		if c1.grabbed == c2.grabbed:
+			return 0
+		return -1
+
+	var indices := range(card_order.size())
+	indices.sort_custom(func(i1, i2):
+		var c1 := card_order[i1]
+		var c2 := card_order[i2]
+		var o: int = custom_comparator.call(c1, c2)
+		if o > 0:
 			return true
-		return c1.index < c2.index)
-	sync_to_scene_tree(co_for_scene_tree)
+		if o == 0:
+			return i1 < i2
+		return false)
+	sync_to_scene_tree(indices.map(func(i): return card_order[i]))
 
 
 func sync_to_scene_tree(co_for_scene_tree):

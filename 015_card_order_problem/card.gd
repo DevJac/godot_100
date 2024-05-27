@@ -5,7 +5,6 @@ extends Sprite2D
 var grabbed := false
 var grab_offset := Vector2.ZERO
 var hovered := false
-var index: int = 0
 
 
 func _on_control_gui_input(event: InputEvent) -> void:
