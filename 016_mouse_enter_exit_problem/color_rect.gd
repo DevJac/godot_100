@@ -23,7 +23,8 @@ func move_then_set_color(new_position: Vector2):
 		_on_mouse_entered()
 	else:
 		_on_mouse_exited()
-	# You can also force a mouse event to (re)evaluate mouse entered / exited events.
+	# You can also force a mouse event to (re)evaluate mouse entered / exited events,
+	# if so, manually checking the mouse position, like above, is unnecessary.
 	Input.warp_mouse(get_global_mouse_position())
 
 
