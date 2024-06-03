@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://cohk2qcy1wwq2"]
+
+[ext_resource type="Script" path="res://sprite.gd" id="1_m44er"]
+[ext_resource type="Script" path="res://hover_grab_control.gd" id="2_ouid4"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_d7hth"]
+load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(320, 320)
+texture = SubResource("CompressedTexture2D_d7hth")
+script = ExtResource("1_m44er")
+
+[node name="HoverGrabControl" type="Control" parent="Sprite2D" node_paths=PackedStringArray("grabbable_node")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = -64.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_ouid4")
+grabbable_node = NodePath("..")
+
+[connection signal="drag" from="Sprite2D/HoverGrabControl" to="Sprite2D" method="_on_hover_grab_control_drag"]
+[connection signal="grab_begin" from="Sprite2D/HoverGrabControl" to="Sprite2D" method="_on_hover_grab_control_grab_begin"]
+[connection signal="grab_end" from="Sprite2D/HoverGrabControl" to="Sprite2D" method="_on_hover_grab_control_grab_end"]
+[connection signal="gui_input" from="Sprite2D/HoverGrabControl" to="Sprite2D/HoverGrabControl" method="_on_gui_input"]
+[connection signal="hover_begin" from="Sprite2D/HoverGrabControl" to="Sprite2D" method="_on_hover_grab_control_hover_begin"]
+[connection signal="hover_end" from="Sprite2D/HoverGrabControl" to="Sprite2D" method="_on_hover_grab_control_hover_end"]
+[connection signal="mouse_entered" from="Sprite2D/HoverGrabControl" to="Sprite2D/HoverGrabControl" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Sprite2D/HoverGrabControl" to="Sprite2D/HoverGrabControl" method="_on_mouse_exited"]
