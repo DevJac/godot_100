@@ -1,11 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://lygynh7ujd6n"]
+[gd_scene load_steps=6 format=3 uid="uid://lygynh7ujd6n"]
 
 [ext_resource type="Texture2D" uid="uid://bfd6cqbltfien" path="res://icon.svg" id="1_6pqt0"]
 [ext_resource type="Script" path="res://follow_path.gd" id="1_7g2uv"]
+[ext_resource type="Script" path="res://place_sprites_along_path.gd" id="3_53oab"]
 
 [sub_resource type="Curve2D" id="Curve2D_f6ol4"]
 _data = {
 "points": PackedVector2Array(-172.624, 87.0849, 172.624, -87.0849, 186, 523, -169.364, -86.3995, 169.364, 86.3995, 884, 523)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_12mik"]
+_data = {
+"points": PackedVector2Array(-153.71, 112.133, 153.71, -112.133, 179, 299, -128.512, -110.873, 128.512, 110.873, 919, 298)
 }
 point_count = 2
 
@@ -36,4 +43,17 @@ script = ExtResource("1_7g2uv")
 speed = 310.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D2"]
+texture = ExtResource("1_6pqt0")
+
+[node name="Path2D2" type="Path2D" parent="."]
+curve = SubResource("Curve2D_12mik")
+script = ExtResource("3_53oab")
+
+[node name="Sprite2D" type="Sprite2D" parent="Path2D2"]
+texture = ExtResource("1_6pqt0")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Path2D2"]
+texture = ExtResource("1_6pqt0")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Path2D2"]
 texture = ExtResource("1_6pqt0")
