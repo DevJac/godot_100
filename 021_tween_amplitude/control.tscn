@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtrhbe7utau5h"]
+
+[ext_resource type="Script" path="res://tween_here_button.gd" id="1_xqy6e"]
+[ext_resource type="Script" path="res://tween_var.gd" id="2_msigx"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 256.0
+offset_right = 256.0
+offset_bottom = 320.0
+text = "Tween
+Here"
+script = ExtResource("1_xqy6e")
+tween_amplitude = 3.0
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 896.0
+offset_top = 256.0
+offset_right = 960.0
+offset_bottom = 320.0
+text = "Tween
+Here"
+script = ExtResource("1_xqy6e")
+tween_amplitude = 0.8
+tween_time = 0.5
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 128.0
+offset_right = 256.0
+offset_bottom = 192.0
+script = ExtResource("2_msigx")
+
+[node name="Marker" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 256.0
+offset_right = 128.0
+offset_bottom = 320.0
+color = Color(1, 0, 0, 1)
+
+[node name="Marker2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 1024.0
+offset_top = 256.0
+offset_right = 1032.0
+offset_bottom = 320.0
+color = Color(1, 0, 0, 1)

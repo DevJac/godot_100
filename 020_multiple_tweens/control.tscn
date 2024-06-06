@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=3 uid="uid://cs1rclgq8ln7w"]
+
+[ext_resource type="Script" path="res://multiple_tweens.gd" id="1_h7yjb"]
+[ext_resource type="Script" path="res://multiple_tweens_2.gd" id="2_t0cqm"]
+[ext_resource type="Script" path="res://multiple_tweens_3.gd" id="3_kqplb"]
+[ext_resource type="Script" path="res://multiple_tweens_4.gd" id="4_e6kl3"]
+[ext_resource type="Script" path="res://multiple_tweens_5.gd" id="5_6gx28"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 256.0
+offset_right = 192.0
+offset_bottom = 320.0
+script = ExtResource("1_h7yjb")
+metadata/_edit_lock_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 704.0
+offset_top = 128.0
+offset_right = 768.0
+offset_bottom = 192.0
+script = ExtResource("2_t0cqm")
+metadata/_edit_lock_ = true
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 704.0
+offset_top = 320.0
+offset_right = 768.0
+offset_bottom = 384.0
+script = ExtResource("3_kqplb")
+metadata/_edit_lock_ = true
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 704.0
+offset_top = 416.0
+offset_right = 768.0
+offset_bottom = 480.0
+script = ExtResource("4_e6kl3")
+
+[node name="ColorRect5" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 704.0
+offset_top = 512.0
+offset_right = 768.0
+offset_bottom = 576.0
+script = ExtResource("5_6gx28")
