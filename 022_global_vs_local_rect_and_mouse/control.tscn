@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://chmf33c68htpu"]
+
+[ext_resource type="Script" path="res://color_rect.gd" id="1_vjqob"]
+
+[sub_resource type="SystemFont" id="SystemFont_dj5my"]
+font_names = PackedStringArray("Monospace")
+
+[sub_resource type="SystemFont" id="SystemFont_qbf5i"]
+font_names = PackedStringArray("Monospace")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 128.0
+offset_bottom = 128.0
+rotation = 0.280998
+script = ExtResource("1_vjqob")
+
+[node name="LocalDebugLabel" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_top = 144.0
+offset_right = 256.0
+offset_bottom = 175.0
+theme_override_fonts/font = SubResource("SystemFont_dj5my")
+
+[node name="GlobalDebugLabel" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_top = 208.0
+offset_right = 256.0
+offset_bottom = 239.0
+theme_override_fonts/font = SubResource("SystemFont_qbf5i")
