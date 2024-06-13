@@ -1,0 +1,161 @@
+[gd_scene load_steps=4 format=3 uid="uid://cinlattbgwfip"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_65dk4"]
+[ext_resource type="Script" path="res://size_label.gd" id="1_myfts"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_q1eeq"]
+font_size = 80
+
+[node name="Control" type="Control"]
+custom_minimum_size = Vector2(600, 600)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_65dk4")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CenterContainer"]
+custom_minimum_size = Vector2(1152, 648)
+layout_mode = 2
+color = Color(0.3, 0.03, 0.03, 1)
+
+[node name="SizeLabel" type="Label" parent="CenterContainer/ColorRect"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 128.0
+offset_right = 278.0
+offset_bottom = 238.0
+text = "Size"
+label_settings = SubResource("LabelSettings_q1eeq")
+script = ExtResource("1_myfts")
+
+[node name="ColorRect1" type="ColorRect" parent="CenterContainer/ColorRect"]
+layout_mode = 0
+offset_left = -104.0
+offset_right = -64.0
+offset_bottom = 40.0
+
+[node name="ColorRect2" type="ColorRect" parent="CenterContainer/ColorRect"]
+layout_mode = 0
+offset_left = -160.0
+offset_top = 304.0
+offset_right = -120.0
+offset_bottom = 344.0
+
+[node name="ColorRect3" type="ColorRect" parent="CenterContainer/ColorRect"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 568.0
+offset_right = -72.0
+offset_bottom = 608.0
+
+[node name="ColorRect4" type="ColorRect" parent="CenterContainer/ColorRect"]
+layout_mode = 0
+offset_top = -144.0
+offset_right = 40.0
+offset_bottom = -104.0
+
+[node name="ColorRect5" type="ColorRect" parent="CenterContainer/ColorRect"]
+layout_mode = 0
+offset_left = -16.0
+offset_top = -16.0
+
+[node name="ColorRect6" type="ColorRect" parent="CenterContainer/ColorRect"]
+layout_mode = 0
+offset_left = 1072.0
+offset_top = -104.0
+offset_right = 1112.0
+offset_bottom = -64.0
+
+[node name="ColorRect7" type="ColorRect" parent="CenterContainer/ColorRect"]
+layout_mode = 0
+offset_left = 472.0
+offset_top = -112.0
+offset_right = 512.0
+offset_bottom = -72.0
+
+[node name="ColorRect8" type="ColorRect" parent="CenterContainer/ColorRect"]
+layout_mode = 0
+offset_left = 1232.0
+offset_top = 64.0
+offset_right = 1272.0
+offset_bottom = 104.0
+
+[node name="ColorRect9" type="ColorRect" parent="CenterContainer/ColorRect"]
+layout_mode = 0
+offset_left = 1216.0
+offset_top = 552.0
+offset_right = 1256.0
+offset_bottom = 592.0
+
+[node name="ColorRect10" type="ColorRect" parent="CenterContainer/ColorRect"]
+layout_mode = 0
+offset_left = 1304.0
+offset_top = 304.0
+offset_right = 1344.0
+offset_bottom = 344.0
+
+[node name="ColorRect11" type="ColorRect" parent="CenterContainer/ColorRect"]
+layout_mode = 0
+offset_left = 1112.0
+offset_top = 720.0
+offset_right = 1152.0
+offset_bottom = 760.0
+
+[node name="ColorRect12" type="ColorRect" parent="CenterContainer/ColorRect"]
+layout_mode = 0
+offset_top = 656.0
+offset_right = 40.0
+offset_bottom = 696.0
+
+[node name="ColorRect13" type="ColorRect" parent="CenterContainer/ColorRect"]
+layout_mode = 0
+offset_left = 744.0
+offset_top = 760.0
+offset_right = 784.0
+offset_bottom = 800.0
+
+[node name="ColorRect14" type="ColorRect" parent="CenterContainer/ColorRect"]
+layout_mode = 0
+offset_left = 424.0
+offset_top = 856.0
+offset_right = 464.0
+offset_bottom = 896.0
+
+[node name="ColorRect15" type="ColorRect" parent="CenterContainer/ColorRect"]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 712.0
+offset_right = 440.0
+offset_bottom = 752.0
+
+[node name="ColorRect16" type="ColorRect" parent="CenterContainer/ColorRect"]
+layout_mode = 0
+offset_left = 1024.0
+offset_top = 64.0
+offset_right = 1088.0
+offset_bottom = 584.0
+
+[node name="ColorRect17" type="ColorRect" parent="CenterContainer/ColorRect"]
+layout_mode = 0
+offset_left = 896.0
+offset_top = 64.0
+offset_right = 960.0
+offset_bottom = 584.0
+
+[node name="ColorRect18" type="ColorRect" parent="CenterContainer/ColorRect"]
+layout_mode = 0
+offset_left = 768.0
+offset_top = 64.0
+offset_right = 832.0
+offset_bottom = 584.0
