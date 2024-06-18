@@ -10,9 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Path2D"
-run/main_scene="res://control.tscn"
+config/name="Node Replace By"
+run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
+config/icon="res://icon.svg"
 
 [rendering]
 
