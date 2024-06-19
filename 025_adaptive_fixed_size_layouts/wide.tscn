@@ -1,6 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://boo4vmre55kyc"]
-
-[ext_resource type="Script" path="res://layout.gd" id="1_fge8s"]
+[gd_scene format=3 uid="uid://boo4vmre55kyc"]
 
 [node name="WideLayout" type="Control"]
 custom_minimum_size = Vector2(1152, 648)
@@ -8,31 +6,27 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 648.0
-script = ExtResource("1_fge8s")
 
 [node name="ColorRect1" type="ColorRect" parent="."]
 layout_mode = 0
 offset_left = 64.0
 offset_top = 64.0
-offset_right = 192.0
-offset_bottom = 192.0
-color = Color(1, 0, 0, 1)
+offset_right = 544.0
+offset_bottom = 384.0
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = 64.0
-offset_top = 256.0
-offset_right = 192.0
+offset_left = 608.0
+offset_top = 64.0
+offset_right = 1088.0
 offset_bottom = 384.0
-color = Color(0, 1, 0, 1)
 
 [node name="ColorRect3" type="ColorRect" parent="."]
 layout_mode = 0
 offset_left = 64.0
 offset_top = 448.0
-offset_right = 192.0
+offset_right = 1088.0
 offset_bottom = 576.0
-color = Color(0, 0, 1, 1)
 
 [node name="ReferenceRect" type="ReferenceRect" parent="."]
 layout_mode = 1
@@ -41,6 +35,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-border_color = Color(0, 1, 1, 1)
+border_color = Color(1, 1, 1, 1)
 border_width = 5.0
 editor_only = false

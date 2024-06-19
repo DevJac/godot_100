@@ -1,6 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://4hfx7irf01xf"]
-
-[ext_resource type="Script" path="res://layout.gd" id="1_d44nq"]
+[gd_scene format=3 uid="uid://4hfx7irf01xf"]
 
 [node name="TallLayout" type="Control"]
 custom_minimum_size = Vector2(648, 1152)
@@ -8,28 +6,27 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 648.0
 offset_bottom = 1152.0
-script = ExtResource("1_d44nq")
 
 [node name="ColorRect1" type="ColorRect" parent="."]
 layout_mode = 0
 offset_left = 64.0
 offset_top = 64.0
-offset_right = 192.0
-offset_bottom = 192.0
+offset_right = 576.0
+offset_bottom = 448.0
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = 256.0
-offset_top = 64.0
-offset_right = 384.0
-offset_bottom = 192.0
+offset_left = 64.0
+offset_top = 512.0
+offset_right = 576.0
+offset_bottom = 896.0
 
 [node name="ColorRect3" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = 448.0
-offset_top = 64.0
+offset_left = 64.0
+offset_top = 960.0
 offset_right = 576.0
-offset_bottom = 192.0
+offset_bottom = 1088.0
 
 [node name="ReferenceRect" type="ReferenceRect" parent="."]
 layout_mode = 1
@@ -38,6 +35,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-border_color = Color(0, 1, 1, 1)
+border_color = Color(1, 1, 1, 1)
 border_width = 5.0
 editor_only = false
