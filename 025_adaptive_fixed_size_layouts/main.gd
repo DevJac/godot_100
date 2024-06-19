@@ -47,8 +47,11 @@ func sync_scene_with_size():
 	if current_scene != target_scene.scene:
 		current_scene = target_scene.scene
 		assert($CenterContainer.get_child_count() == 1)
-		$CenterContainer.get_child(0).free()
-		# Preloading would probably be better, but I wanted to try load.
-		# There is no perceivable delay using load on a project this small.
-		$CenterContainer.add_child(load(target_scene.scene).instantiate())
+		var old_layout = $CenterContainer.get_child(0)
+		var new_layout = load(target_scene.scene).instantiate()
+		$CenterContainer.add_child(new_layout)
+		new_layout.set_squares(old_layout.take_squares())
+		$CenterContainer.remove_child(old_layout)
+		old_layout.free()
+		assert($CenterContainer.get_child_count() == 1)
 		get_window().content_scale_size = target_scene.size

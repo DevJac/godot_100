@@ -15,9 +15,11 @@ func _ready() -> void:
 		assert(new_node is ColorRect)
 		old_node.replace_by(new_node)
 		# The above line (with replace_by) does roughly the same as the
-		# following 2 lines. The main difference is replace_by will handle
-		# removing the child from the correct index and adding the new child at
-		# the (same) correct index, as we would expect.
+		# following 2 lines. The main difference is the children of the
+		# replaced node will be moved and become children of the new node.
+		# Also, replace_by will handle removing the child from the correct
+		# index and adding the new child at the (same) correct index,
+		# as we would expect.
 		# $Control.remove_child(old_node)
 		# $Control.add_child(new_node)
 		old_node.free()
