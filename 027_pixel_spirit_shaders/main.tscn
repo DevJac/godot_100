@@ -1,0 +1,100 @@
+[gd_scene load_steps=10 format=3 uid="uid://b02vfkwxw7vlt"]
+
+[ext_resource type="PackedScene" uid="uid://dc3u5kcuh8ihx" path="res://card.tscn" id="1_207lx"]
+[ext_resource type="Shader" path="res://shaders/blank.gdshader" id="2_748ct"]
+[ext_resource type="Shader" path="res://shaders/the_wall.gdshader" id="2_w8rbk"]
+[ext_resource type="Shader" path="res://shaders/death.gdshader" id="3_8xk3m"]
+[ext_resource type="PackedScene" uid="uid://bedejyesgyl12" path="res://card_selector.tscn" id="3_q0rab"]
+[ext_resource type="Shader" path="res://shaders/void.gdshader" id="4_hkr5n"]
+[ext_resource type="Shader" path="res://shaders/justice.gdshader" id="5_4jyy5"]
+[ext_resource type="Shader" path="res://shaders/strength.gdshader" id="6_g8m1i"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r8w7p"]
+resource_local_to_scene = true
+
+[node name="CenterContainer" type="CenterContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Main" type="Control" parent="."]
+custom_minimum_size = Vector2(1152, 648)
+layout_mode = 2
+
+[node name="Card" parent="Main" instance=ExtResource("1_207lx")]
+material = SubResource("ShaderMaterial_r8w7p")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.00694444
+anchor_top = 0.0123457
+anchor_right = 0.00694444
+anchor_bottom = 0.0123457
+metadata/_edit_use_anchors_ = true
+
+[node name="CardSelector" parent="Main/Card" node_paths=PackedStringArray("card") instance=ExtResource("3_q0rab")]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 264.0
+offset_right = 568.0
+offset_bottom = 296.0
+text = "Death"
+card = NodePath("..")
+card_name = "Death"
+shader = ExtResource("3_8xk3m")
+
+[node name="Blank" parent="Main" node_paths=PackedStringArray("card") instance=ExtResource("3_q0rab")]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 16.0
+offset_right = 576.0
+offset_bottom = 48.0
+text = "Blank"
+card = NodePath("../Card")
+card_name = "Blank"
+shader = ExtResource("2_748ct")
+
+[node name="Void" parent="Main" node_paths=PackedStringArray("card") instance=ExtResource("3_q0rab")]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 80.0
+offset_right = 576.0
+offset_bottom = 112.0
+text = "Void"
+card = NodePath("../Card")
+card_name = "Void"
+shader = ExtResource("4_hkr5n")
+
+[node name="Justice" parent="Main" node_paths=PackedStringArray("card") instance=ExtResource("3_q0rab")]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 144.0
+offset_right = 576.0
+offset_bottom = 176.0
+text = "Justice"
+card = NodePath("../Card")
+card_name = "Justice"
+shader = ExtResource("5_4jyy5")
+
+[node name="Death" parent="Main" node_paths=PackedStringArray("card") instance=ExtResource("3_q0rab")]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 208.0
+offset_right = 576.0
+offset_bottom = 240.0
+text = "Strength"
+card = NodePath("../Card")
+card_name = "Strength"
+shader = ExtResource("6_g8m1i")
+
+[node name="TheWall" parent="Main" node_paths=PackedStringArray("card") instance=ExtResource("3_q0rab")]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 336.0
+offset_right = 576.0
+offset_bottom = 368.0
+text = "The Wall"
+card = NodePath("../Card")
+card_name = "The Wall"
+shader = ExtResource("2_w8rbk")

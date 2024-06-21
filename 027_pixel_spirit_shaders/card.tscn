@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dc3u5kcuh8ihx"]
+
+[ext_resource type="Shader" path="res://shaders/blank.gdshader" id="1_0rx16"]
+[ext_resource type="Script" path="res://card.gd" id="2_murwn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vgq2s"]
+resource_local_to_scene = true
+shader = ExtResource("1_0rx16")
+
+[sub_resource type="LabelSettings" id="LabelSettings_eno4y"]
+font_size = 32
+outline_size = 16
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Card" type="ColorRect"]
+material = SubResource("ShaderMaterial_vgq2s")
+offset_right = 368.0
+offset_bottom = 632.0
+color = Color(1, 0, 1, 1)
+script = ExtResource("2_murwn")
+
+[node name="NameLabel" type="Label" parent="."]
+layout_mode = 0
+offset_top = 576.0
+offset_right = 368.0
+offset_bottom = 632.0
+label_settings = SubResource("LabelSettings_eno4y")
+horizontal_alignment = 1
+vertical_alignment = 1
