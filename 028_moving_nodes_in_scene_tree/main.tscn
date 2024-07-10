@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=3 uid="uid://mvhclxqk6c3s"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_es85x"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_es85x")
+
+[node name="A" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 362.0
+offset_top = 191.0
+offset_right = 402.0
+offset_bottom = 231.0
+
+[node name="AA" type="Control" parent="A"]
+anchors_preset = 0
+offset_left = 412.0
+offset_top = -121.0
+offset_right = 452.0
+offset_bottom = -81.0
+
+[node name="ColorRect" type="ColorRect" parent="A/AA"]
+layout_mode = 0
+offset_left = -203.0
+offset_top = 224.0
+offset_right = -163.0
+offset_bottom = 264.0
+
+[node name="B" type="Control" parent="."]
+anchors_preset = 0
+offset_left = -168.0
+offset_top = -163.0
+offset_right = -128.0
+offset_bottom = -123.0
+
+[node name="BA" type="Control" parent="B"]
+anchors_preset = 0
+offset_left = 59.0
+offset_top = 232.0
+offset_right = 99.0
+offset_bottom = 272.0
+
+[node name="BAA" type="Control" parent="B/BA"]
+anchors_preset = 0
+offset_left = 521.0
+offset_top = -212.0
+offset_right = 561.0
+offset_bottom = -172.0
+
+[connection signal="child_exiting_tree" from="A/AA" to="." method="_on_aa_child_exiting_tree"]
