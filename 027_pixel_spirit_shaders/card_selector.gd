@@ -1,9 +1,6 @@
 @tool
 extends Button
 
-
-@export var card: Node
-
 @export var card_name: String:
 	set(new_value):
 		card_name = new_value
@@ -13,5 +10,6 @@ extends Button
 
 
 func _pressed() -> void:
+	var card = get_parent().get_node('Card')
 	card.card_name = card_name
 	card.shader = shader
