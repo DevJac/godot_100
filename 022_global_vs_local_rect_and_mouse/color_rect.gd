@@ -16,3 +16,8 @@ func _process(_delta: float) -> void:
 			get_global_mouse_position(),
 			get_global_rect().has_point(get_global_mouse_position()),
 		])
+	color = Color(1, 1, 1)
+	if get_rect().has_point(get_local_mouse_position() + get_rect().position):
+		color.r -= 1
+	if get_global_rect().has_point(get_global_mouse_position()):
+		color.g -= 1
