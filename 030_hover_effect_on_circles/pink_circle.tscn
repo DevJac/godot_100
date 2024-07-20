@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxq0fahcphpmb"]
+
+[ext_resource type="Texture2D" uid="uid://3neojsdq7mqu" path="res://circles/pink_circle.png" id="1_4omff"]
+[ext_resource type="Script" path="res://circle.gd" id="1_drxbe"]
+
+[node name="PinkCircle" type="Node2D"]
+script = ExtResource("1_drxbe")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3, 6)
+texture = ExtResource("1_4omff")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-6, -12, 8, -16, 20, -14, 26, -8, 26, -2, 12, 8, 2, 13, -10, 18, -18, 15, -21, 7, -21, -1, -15, -6)
