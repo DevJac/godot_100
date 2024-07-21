@@ -13,9 +13,9 @@ script = ExtResource("1_ca17s")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_dloi8")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="RedArea2D" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RedArea2D"]
 position = Vector2(0, -2)
 rotation = 1.13475
 shape = SubResource("CapsuleShape2D_0sdbu")

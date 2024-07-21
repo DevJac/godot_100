@@ -1,14 +1,10 @@
 extends Node2D
+class_name Circle
 
 
-func _ready() -> void:
-	$Area2D.connect('mouse_entered', mouse_entered)
-	$Area2D.connect('mouse_exited', mouse_exited)
-
-
-func mouse_entered():
+func scale_up():
 	$Sprite2D.scale = Vector2.ONE * 1.15
 
 
-func mouse_exited():
+func scale_down():
 	$Sprite2D.scale = Vector2.ONE
