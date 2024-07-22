@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bv0jjt4cjeomk"]
+
+[ext_resource type="Script" path="res://circle.gd" id="1_08fwb"]
+[ext_resource type="Texture2D" uid="uid://bv4yd5wh88h1h" path="res://circles/red_circle.png" id="1_dloi8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0sdbu"]
+radius = 20.2482
+height = 56.0764
+
+[node name="RedCircle" type="Node2D"]
+script = ExtResource("1_08fwb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_dloi8")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -2)
+rotation = 1.13475
+shape = SubResource("CapsuleShape2D_0sdbu")
