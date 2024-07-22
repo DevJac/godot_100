@@ -1,10 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c6x21v7ya3eaw"]
+[gd_scene load_steps=2 format=3 uid="uid://c6x21v7ya3eaw"]
 
 [ext_resource type="Texture2D" uid="uid://che0gher5uer8" path="res://circles/blue_circle.png" id="1_3hxak"]
-[ext_resource type="Script" path="res://circle.gd" id="1_uyyar"]
 
 [node name="BlueCircle" type="Node2D"]
-script = ExtResource("1_uyyar")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_3hxak")

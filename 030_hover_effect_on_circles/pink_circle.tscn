@@ -1,10 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dxq0fahcphpmb"]
+[gd_scene load_steps=2 format=3 uid="uid://dxq0fahcphpmb"]
 
 [ext_resource type="Texture2D" uid="uid://3neojsdq7mqu" path="res://circles/pink_circle.png" id="1_4omff"]
-[ext_resource type="Script" path="res://circle.gd" id="1_drxbe"]
 
 [node name="PinkCircle" type="Node2D"]
-script = ExtResource("1_drxbe")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(3, 6)
