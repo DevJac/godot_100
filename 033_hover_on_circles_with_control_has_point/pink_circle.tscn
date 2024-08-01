@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxq0fahcphpmb"]
+
+[ext_resource type="Texture2D" uid="uid://3neojsdq7mqu" path="res://circles/pink_circle.png" id="1_4omff"]
+[ext_resource type="Script" path="res://circle.gd" id="1_tngpp"]
+[ext_resource type="Script" path="res://circle_control.gd" id="3_opvo0"]
+
+[node name="PinkCircle" type="Node2D"]
+script = ExtResource("1_tngpp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3, 6)
+texture = ExtResource("1_4omff")
+
+[node name="Control" type="Control" parent="Sprite2D"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_top = -30.0
+offset_right = -30.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_opvo0")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D/Control"]
+position = Vector2(27, 24)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D/Control/Area2D"]
+polygon = PackedVector2Array(-6, -12, 8, -16, 20, -14, 26, -8, 26, -2, 12, 8, 2, 13, -10, 18, -18, 15, -21, 7, -21, -1, -15, -6)

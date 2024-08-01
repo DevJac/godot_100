@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bf33xqoer8xeu"]
+
+[ext_resource type="PackedScene" uid="uid://bv0jjt4cjeomk" path="res://red_circle.tscn" id="1_ncan8"]
+[ext_resource type="PackedScene" uid="uid://c6x21v7ya3eaw" path="res://blue_circle.tscn" id="2_6anmn"]
+[ext_resource type="PackedScene" uid="uid://dxq0fahcphpmb" path="res://pink_circle.tscn" id="3_elptk"]
+
+[node name="Main" type="Node2D"]
+
+[node name="RedCircle" parent="." instance=ExtResource("1_ncan8")]
+position = Vector2(475, 206)
+scale = Vector2(4.33629, 4.33629)
+
+[node name="BlueCircle" parent="." instance=ExtResource("2_6anmn")]
+position = Vector2(430, 403)
+scale = Vector2(7.12327, 7.12327)
+
+[node name="PinkCircle" parent="." instance=ExtResource("3_elptk")]
+position = Vector2(614, 316)
+scale = Vector2(9.36775, 9.36775)
