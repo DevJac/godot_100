@@ -1,0 +1,76 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbtapl56chtq6"]
+
+[ext_resource type="Script" path="res://color_option.gd" id="1_7l3wv"]
+[ext_resource type="PackedScene" uid="uid://cps8wl3qdl1jy" path="res://card.tscn" id="1_ebry3"]
+[ext_resource type="Script" path="res://switch_scene.gd" id="2_om4wk"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorOption" type="OptionButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 144.0
+offset_bottom = 95.0
+item_count = 2
+selected = 0
+popup/item_0/text = "Red"
+popup/item_0/id = 0
+popup/item_1/text = "Blue"
+popup/item_1/id = 1
+script = ExtResource("1_7l3wv")
+
+[node name="SwitchButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 128.0
+offset_right = 256.0
+offset_bottom = 192.0
+text = "Switch Scene to
+Hover Count"
+script = ExtResource("2_om4wk")
+
+[node name="Card" parent="." instance=ExtResource("1_ebry3")]
+layout_mode = 1
+offset_left = 64.0
+offset_top = 384.0
+offset_right = -960.0
+offset_bottom = -72.0
+
+[node name="Card2" parent="." instance=ExtResource("1_ebry3")]
+layout_mode = 1
+offset_left = 256.0
+offset_top = 384.0
+offset_right = -768.0
+offset_bottom = -72.0
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 640.0
+offset_top = 64.0
+offset_right = 1088.0
+offset_bottom = 584.0
+mouse_filter = 2
+
+[node name="Card3" parent="Control" instance=ExtResource("1_ebry3")]
+layout_mode = 1
+offset_left = 192.0
+offset_top = 32.0
+offset_right = -128.0
+offset_bottom = -296.0
+
+[node name="Card4" parent="Control" instance=ExtResource("1_ebry3")]
+layout_mode = 1
+offset_left = 192.0
+offset_top = 288.0
+offset_right = -128.0
+offset_bottom = -40.0
+
+[connection signal="pressed" from="SwitchButton" to="SwitchButton" method="_on_pressed"]

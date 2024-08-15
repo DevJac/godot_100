@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://cps8wl3qdl1jy"]
+
+[ext_resource type="Script" path="res://card.gd" id="1_aebrr"]
+
+[node name="Card" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1024.0
+offset_bottom = -456.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aebrr")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 120.0
+offset_bottom = 184.0
+mouse_filter = 2
+color = Color(0.533037, 0.533037, 0.533037, 1)
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
