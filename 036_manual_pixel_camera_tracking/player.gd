@@ -13,22 +13,19 @@ const MOVEMENTS := {
 
 
 var real_global_position = Vector2.ZERO
-var last_global_position = Vector2.ZERO
 
 
 func _ready() -> void:
 	real_global_position = global_position
-	last_global_position = global_position
 
 
 func _process(delta: float) -> void:
+	if ProjectSettings.get_setting('application/run/max_fps') != 0:
+		delta *= ProjectSettings.get_setting('application/run/max_fps') / 60.0
+
 	real_global_position += get_movement_direction() * movement_speed * delta
-	global_position = (
-		Utils.bias_v(real_global_position, last_global_position, 0.75)
-		.round())
-	last_global_position = global_position
+	global_position = real_global_position.round()
 	assert(global_position == global_position.round())
-	prints(global_position)
 
 
 func get_movement_direction() -> Vector2:

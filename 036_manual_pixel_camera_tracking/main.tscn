@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://cl2unormpvuny"]
+[gd_scene load_steps=6 format=4 uid="uid://cl2unormpvuny"]
 
 [ext_resource type="Texture2D" uid="uid://vxcueidhne6q" path="res://tilemap_packed.png" id="1_i5u0i"]
 [ext_resource type="Script" path="res://player.gd" id="2_grjhp"]
+[ext_resource type="Script" path="res://camera_2d.gd" id="3_y6nd0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mdguj"]
 texture = ExtResource("1_i5u0i")
@@ -487,4 +488,6 @@ vframes = 11
 frame = 172
 script = ExtResource("2_grjhp")
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
+script = ExtResource("3_y6nd0")
+target = NodePath("../Player")
