@@ -2,7 +2,7 @@ extends Camera2D
 
 
 @export var target: Node2D
-@export var tracking_speed: float = 3
+@export var tracking_speed: float = 8
 
 
 var real_global_position := Vector2.ZERO

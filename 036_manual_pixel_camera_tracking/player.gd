@@ -1,7 +1,7 @@
 extends Sprite2D
 
 
-@export var movement_speed: float = 50
+@export var movement_speed: float = 80
 
 
 const MOVEMENTS := {
@@ -12,7 +12,8 @@ const MOVEMENTS := {
 }
 
 
-var real_global_position = Vector2.ZERO
+var real_global_position := Vector2.ZERO
+var last_movement_direction := Vector2.ZERO
 
 
 func _ready() -> void:
@@ -22,6 +23,12 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if ProjectSettings.get_setting('application/run/max_fps') != 0:
 		delta *= ProjectSettings.get_setting('application/run/max_fps') / 60.0
+
+	# When the player input changes, snap their position to the grid.
+	var movement_direction := get_movement_direction()
+	if movement_direction != last_movement_direction:
+		real_global_position = real_global_position.round()
+	last_movement_direction = movement_direction
 
 	real_global_position += get_movement_direction() * movement_speed * delta
 	global_position = real_global_position.round()
