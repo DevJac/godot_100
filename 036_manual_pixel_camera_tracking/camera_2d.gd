@@ -37,8 +37,9 @@ func _process(delta: float) -> void:
 		global_position = last_global_position
 	last_global_position = global_position
 	assert(global_position == global_position.round())
-	prints('p_pos: %-20s     c_pos: %-20s     diff: %-20s' % [
+	prints('p_pos: %-10s    %-20s        c_pos: %-20s    diff: %-20s' % [
 		target.global_position,
+		target.real_global_position,
 		self.global_position,
 		target.global_position.distance_to(self.global_position),
 	])
