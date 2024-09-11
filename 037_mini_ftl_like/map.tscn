@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=4 uid="uid://djnk70a06e7we"]
+
+[ext_resource type="Texture2D" uid="uid://bws4ur6uqduoh" path="res://purple_white.png" id="1_gqxnk"]
+[ext_resource type="Script" path="res://map.gd" id="2_f63fe"]
+[ext_resource type="Script" path="res://debug_draws.gd" id="3_wnw2p"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kdxhm"]
+texture = ExtResource("1_gqxnk")
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/terrain = 1
+0:0/0/terrains_peering_bit/right_side = 1
+0:0/0/terrains_peering_bit/bottom_right_corner = 1
+0:0/0/terrains_peering_bit/bottom_side = 1
+0:0/0/terrains_peering_bit/bottom_left_corner = 1
+0:0/0/terrains_peering_bit/left_side = 1
+0:0/0/terrains_peering_bit/top_left_corner = 1
+0:0/0/terrains_peering_bit/top_side = 1
+0:0/0/terrains_peering_bit/top_right_corner = 1
+1:0/0 = 0
+1:0/0/terrain_set = 0
+1:0/0/terrain = 0
+1:0/0/terrains_peering_bit/right_side = 0
+1:0/0/terrains_peering_bit/bottom_right_corner = 0
+1:0/0/terrains_peering_bit/bottom_side = 0
+1:0/0/terrains_peering_bit/bottom_left_corner = 0
+1:0/0/terrains_peering_bit/left_side = 0
+1:0/0/terrains_peering_bit/top_left_corner = 0
+1:0/0/terrains_peering_bit/top_side = 0
+1:0/0/terrains_peering_bit/top_right_corner = 0
+
+[sub_resource type="TileSet" id="TileSet_r6vtf"]
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Walk"
+terrain_set_0/terrain_0/color = Color(0.348344, 0.346717, 0.353965, 1)
+terrain_set_0/terrain_1/name = "Wall"
+terrain_set_0/terrain_1/color = Color(0.205873, 2.11775e-06, 0.933058, 1)
+sources/0 = SubResource("TileSetAtlasSource_kdxhm")
+
+[node name="Map" type="TileMapLayer"]
+tile_map_data = PackedByteArray("AAD/////AAABAAAAAAD+////AAAAAAAAAAD9////AAABAAAAAAD9//7/AAABAAAAAAD9//3/AAABAAAAAAD9//z/AAABAAAAAAD9//v/AAAAAAAAAAD+//v/AAAAAAAAAAD///v/AAAAAAAAAAAAAPv/AAAAAAAAAAABAPv/AAAAAAAAAAACAPv/AAAAAAAAAAADAPv/AAAAAAAAAAADAPz/AAAAAAAAAAADAP3/AAAAAAAAAAADAP7/AAAAAAAAAAADAP//AAAAAAAAAAAAAP//AAAAAAAAAAABAP//AAABAAAAAAACAP//AAABAAAAAAD8////AAAAAAAAAAD8//7/AAAAAAAAAAD8//3/AAAAAAAAAAD8//z/AAAAAAAAAAD8//v/AAAAAAAAAAADAAAAAAAAAAAAAAADAAEAAAAAAAAAAAADAAIAAAAAAAAAAAADAAMAAAAAAAAAAAADAAQAAAAAAAAAAAACAAQAAAAAAAAAAAABAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAD//wQAAAAAAAAAAAD+/wQAAAAAAAAAAAD9/wQAAAAAAAAAAAD8/wQAAAAAAAAAAAD8/wMAAAAAAAAAAAD8/wIAAAAAAAAAAAD8/wEAAAAAAAAAAAD8/wAAAAAAAAAAAAD9/wAAAAABAAAAAAD+/wAAAAABAAAAAAD//wAAAAABAAAAAAAAAAAAAAABAAAAAAABAAAAAAABAAAAAAACAAAAAAABAAAAAAACAAEAAAABAAAAAAACAAIAAAABAAAAAAACAAMAAAABAAAAAAABAAMAAAABAAAAAAAAAAMAAAABAAAAAAD//wMAAAABAAAAAAD+/wMAAAABAAAAAAD9/wMAAAABAAAAAAD9/wIAAAABAAAAAAD9/wEAAAABAAAAAAD+/wEAAAAAAAAAAAD//wEAAAABAAAAAAD//wIAAAAAAAAAAAAAAAIAAAAAAAAAAAD+/wIAAAAAAAAAAAABAAIAAAABAAAAAAABAAEAAAABAAAAAAAAAAEAAAAAAAAAAAACAP7/AAABAAAAAAACAP3/AAABAAAAAAACAPz/AAABAAAAAAABAPz/AAABAAAAAAAAAPz/AAABAAAAAAD///z/AAABAAAAAAD+//z/AAABAAAAAAD+//3/AAAAAAAAAAD///3/AAAAAAAAAAAAAP3/AAAAAAAAAAABAP3/AAAAAAAAAAABAP7/AAAAAAAAAAAAAP7/AAAAAAAAAAD///7/AAAAAAAAAAD+//7/AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_r6vtf")
+script = ExtResource("2_f63fe")
+
+[node name="DebugDraws" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_wnw2p")

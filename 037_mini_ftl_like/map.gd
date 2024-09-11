@@ -2,6 +2,9 @@ extends TileMapLayer
 class_name Map
 
 
+@export var draw_astar_graph: bool = false
+
+
 var astar: AStar2D
 
 
@@ -55,4 +58,3 @@ func _build_astar_network() -> void:
 		_connect_adjacent(astar_point_ids, point)
 	for point in astar_point_ids:
 		astar.set_point_position(astar_point_ids[point], map_to_local(point))
-	

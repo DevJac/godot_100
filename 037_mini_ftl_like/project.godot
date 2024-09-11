@@ -13,7 +13,6 @@ config_version=5
 config/name="Mini FTL Like"
 run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://icon.svg"
 
 [display]
 
@@ -23,6 +22,7 @@ window/size/window_width_override=1600
 window/size/window_height_override=1000
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+window/vsync/vsync_mode=0
 window/canvas_textures/default_texture_filter=0
 
 [rendering]
