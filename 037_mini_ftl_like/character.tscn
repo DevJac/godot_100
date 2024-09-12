@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dggsh8q4rrwxi"]
+[gd_scene load_steps=5 format=3 uid="uid://dggsh8q4rrwxi"]
 
-[ext_resource type="Script" path="res://character_body_2d.gd" id="1_jk00d"]
+[ext_resource type="Script" path="res://character.gd" id="1_jk00d"]
 [ext_resource type="Script" path="res://circle.gd" id="2_74oma"]
+[ext_resource type="Script" path="res://character_debug_draws.gd" id="3_bxvug"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_738ql"]
 radius = 1.0
@@ -15,3 +16,6 @@ script = ExtResource("2_74oma")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_738ql")
+
+[node name="DebugDraws" type="Node2D" parent="."]
+script = ExtResource("3_bxvug")

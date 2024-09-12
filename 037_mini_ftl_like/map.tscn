@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bws4ur6uqduoh" path="res://purple_white.png" id="1_gqxnk"]
 [ext_resource type="Script" path="res://map.gd" id="2_f63fe"]
-[ext_resource type="Script" path="res://debug_draws.gd" id="3_wnw2p"]
+[ext_resource type="Script" path="res://map_debug_draws.gd" id="3_wnw2p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kdxhm"]
 texture = ExtResource("1_gqxnk")
