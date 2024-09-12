@@ -12,7 +12,7 @@ func _ready() -> void:
 	var start_t := Time.get_ticks_usec()
 	_build_astar_network()
 	var stop_t := Time.get_ticks_usec()
-	prints('Build astar network time (usecs):', stop_t - start_t)
+	prints('Built astar network in %d usecs' % (stop_t - start_t))
 
 
 func _is_walkable(point: Vector2i) -> bool:

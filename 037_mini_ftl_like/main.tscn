@@ -18,6 +18,10 @@ mouse_filter = 2
 
 [node name="Map" parent="Center" instance=ExtResource("1_456x8")]
 
-[node name="Character" parent="Center" node_paths=PackedStringArray("map") instance=ExtResource("2_leswx")]
+[node name="Characters" type="Node2D" parent="Center"]
+
+[node name="Character" parent="Center/Characters" node_paths=PackedStringArray("map") instance=ExtResource("2_leswx")]
 position = Vector2(40, 56)
-map = NodePath("../Map")
+map = NodePath("../../Map")
+
+[node name="CharacterSelector" type="Node" parent="Center"]

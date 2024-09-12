@@ -19,7 +19,7 @@ func draw_ap(ap: int, color: Color) -> void:
 
 func _draw() -> void:
 	draw_line(
-		map_to_local(character.map.astar.get_point_position(character.last_ap_path_0)),
+		map_to_local(character.map.astar.get_point_position(character.last_ap)),
 		map_to_local(character.map.astar.get_point_position(character.ap_path[0])),
 		Color.BLUE,
 		0.5)
@@ -31,4 +31,4 @@ func _draw() -> void:
 			0.5)
 	for ap in character.ap_path:
 		draw_ap(ap, Color.CYAN)
-	draw_ap(character.last_ap_path_0, Color.BLUE)
+	draw_ap(character.last_ap, Color.BLUE)

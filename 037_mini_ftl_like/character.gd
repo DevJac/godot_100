@@ -3,16 +3,14 @@ class_name Character
 
 
 @export var map: Map
-@export var character_speed: float = 10
+@export var character_speed: float = 20
 
 
 ## The character is moving towards the first point in ap_path,
 ## or located at that point. This path should never be empty.
 @onready var ap_path: PackedInt64Array = [map.astar.get_closest_point(position)]
-## This is the last point the player was moving towards.
-## The player is on the line segment from last_ap_path_0 to ap_path[0],
-## possibly at the ap_path[0] end. 
-@onready var last_ap_path_0: int = ap_path[0]
+## This is the last point the player was at.
+@onready var last_ap: int = ap_path[0]
 
 
 const mouse_down_drag_ignore: int = 50
@@ -21,18 +19,29 @@ var mouse_last_down_position: Vector2i = Vector2i.ZERO
 var mouse_last_down_time: int = 0
 
 
+var selected := false
+
+
+func begin_path_to_profiled(target_point: Vector2) -> void:
+	var start_t = Time.get_ticks_usec()
+	begin_path_to(target_point)
+	var end_t = Time.get_ticks_usec()
+	prints('Created new character path in %d usecs' % (end_t - start_t))
+
+
 func begin_path_to(target_point: Vector2) -> void:
 	## Move to the AStar point closest to the given point.
 	## The given point does not have to be a valid AStar point.
 	## This functions calculates a path, and stores that path, and then
 	## _process will follow the path each frame.
 	var target_ap: int = map.astar.get_closest_point(target_point)
-	ap_path = map.astar.get_id_path(ap_path[0], target_ap)
-	if ap_path.size() == 1:
-		return
-	if ap_path[1] == last_ap_path_0:
-		last_ap_path_0 = ap_path[0]
-		ap_path.remove_at(0)
+	var character_ap: int = map.astar.get_available_point_id()
+	map.astar.add_point(character_ap, position)
+	map.astar.connect_points(character_ap, ap_path[0])
+	map.astar.connect_points(character_ap, last_ap)
+	ap_path = map.astar.get_id_path(character_ap, target_ap)
+	ap_path.remove_at(0)
+	map.astar.remove_point(character_ap)
 	assert(ap_path.size() >= 1)
 
 
@@ -44,13 +53,14 @@ func follow_path(delta: float) -> void:
 		var distance_to_next_ap_pos := position.distance_to(next_ap_pos)
 		if distance_to_next_ap_pos < remaining_frame_movement:
 			position = next_ap_pos
+			last_ap = ap_path[0]
 			if ap_path.size() == 1:
 				break
 			remaining_frame_movement -= distance_to_next_ap_pos
-			last_ap_path_0 = ap_path[0]
 			ap_path.remove_at(0)
 			continue
 		else:
+			assert(distance_to_next_ap_pos > remaining_frame_movement)
 			var movement_direction := (next_ap_pos - position).normalized()
 			position += remaining_frame_movement * movement_direction
 			break
@@ -77,4 +87,4 @@ func _unhandled_input(event: InputEvent) -> void:
 					Time.get_ticks_msec() - mouse_last_down_time)
 				if time_while_pressed > mouse_down_timeout:
 					return
-				begin_path_to(map.to_local(e.global_position))
+				begin_path_to_profiled(map.to_local(e.global_position))
