@@ -7,7 +7,6 @@ extends Node2D
 
 func _draw() -> void:
 	if not Engine.is_editor_hint() and character.selected:
-		draw_circle(Vector2.ZERO, 6, Color.LIGHT_SEA_GREEN)
-	else:
-		draw_circle(Vector2.ZERO, 6, Color.DARK_GREEN)
-	draw_circle(Vector2.ZERO, 5, Color.FOREST_GREEN)
+		draw_circle(Vector2.ZERO, 6, Color.DODGER_BLUE, false, 1, false)
+	draw_circle(Vector2.ZERO, 5, Color.DARK_GREEN)
+	draw_circle(Vector2.ZERO, 4, Color.FOREST_GREEN)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://8tbad2b1e23g"]
+[gd_scene load_steps=4 format=3 uid="uid://8tbad2b1e23g"]
 
 [ext_resource type="PackedScene" uid="uid://djnk70a06e7we" path="res://map.tscn" id="1_456x8"]
 [ext_resource type="PackedScene" uid="uid://dggsh8q4rrwxi" path="res://character.tscn" id="2_leswx"]
+[ext_resource type="Script" path="res://character_selector.gd" id="3_q727x"]
 
 [node name="Main" type="Node"]
 
@@ -24,4 +25,25 @@ mouse_filter = 2
 position = Vector2(40, 56)
 map = NodePath("../../Map")
 
-[node name="CharacterSelector" type="Node" parent="Center"]
+[node name="Character2" parent="Center/Characters" node_paths=PackedStringArray("map") instance=ExtResource("2_leswx")]
+position = Vector2(-8, -8)
+map = NodePath("../../Map")
+
+[node name="Character3" parent="Center/Characters" node_paths=PackedStringArray("map") instance=ExtResource("2_leswx")]
+position = Vector2(40, 8)
+map = NodePath("../../Map")
+
+[node name="Character4" parent="Center/Characters" node_paths=PackedStringArray("map") instance=ExtResource("2_leswx")]
+position = Vector2(-40, -8)
+map = NodePath("../../Map")
+
+[node name="Character5" parent="Center/Characters" node_paths=PackedStringArray("map") instance=ExtResource("2_leswx")]
+position = Vector2(40, -40)
+map = NodePath("../../Map")
+
+[node name="Character6" parent="Center/Characters" node_paths=PackedStringArray("map") instance=ExtResource("2_leswx")]
+position = Vector2(-8, 24)
+map = NodePath("../../Map")
+
+[node name="CharacterSelector" type="Node2D" parent="Center"]
+script = ExtResource("3_q727x")

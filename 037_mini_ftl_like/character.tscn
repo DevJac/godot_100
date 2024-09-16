@@ -7,7 +7,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_738ql"]
 radius = 1.0
 
-[node name="Character" type="CharacterBody2D"]
+[node name="Character" type="CharacterBody2D" groups=["selectable"]]
 collision_mask = 0
 script = ExtResource("1_jk00d")
 
