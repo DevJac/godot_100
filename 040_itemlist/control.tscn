@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqyvcv57r25tx"]
+
+[ext_resource type="Texture2D" uid="uid://n72lom3mfljj" path="res://icon.svg" id="1_khlay"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ItemList" type="ItemList" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 320.0
+offset_bottom = 448.0
+item_count = 7
+item_0/text = "You can"
+item_1/text = "have"
+item_2/text = "text"
+item_3/text = "items"
+item_4/text = "and some"
+item_5/text = "can have"
+item_6/text = "icons"
+item_6/icon = ExtResource("1_khlay")
