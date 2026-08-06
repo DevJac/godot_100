@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://d0ej2srrggug3"]
+
+[ext_resource type="Script" uid="uid://dgkewe1co1u1u" path="res://draw_tile_outline.gd" id="1_ig7tw"]
+
+[node name="Main" type="Control" unique_id=1895136646]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Node2D" type="Node2D" parent="." unique_id=164456222]
+script = ExtResource("1_ig7tw")
