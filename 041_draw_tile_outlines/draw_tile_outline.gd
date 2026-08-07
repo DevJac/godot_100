@@ -1,11 +1,12 @@
 extends Node2D
 
-var tiles: Array[Vector2i] = [
-	Vector2i(0, 0),
-	Vector2i(0, -1),
-	Vector2i(-1, 0),
-	Vector2i(1, 0),
-]
+var tiles: Dictionary[Vector2i, bool] = {
+	Vector2i(0, 0): true,
+	Vector2i(0, -1): true,
+	Vector2i(-1, 0): true,
+	Vector2i(1, 0): true,
+	Vector2i(1, -2): true,
+}
 
 const DIRECTIONS: Array[Vector2i] = [
 	Vector2i.UP,
@@ -17,7 +18,7 @@ const DIRECTIONS: Array[Vector2i] = [
 func _draw() -> void:
 	var tile_size_i: Vector2i = Vector2i(16, 16)
 	draw_outline(tile_size_i, 1, 0, Color(1, 1, 1, 1))
-	draw_outline(tile_size_i, 1, 1, Color(1, 0, 0, 0.5))
+	draw_outline(tile_size_i, 1, -1, Color(1, 0, 0, 0.5))
 	draw_outline(tile_size_i, 1, -2, Color(0, 0, 1, 0.25))
 
 func draw_outline(
