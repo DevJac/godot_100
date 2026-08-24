@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="New Game Project"
+config/name="Awaiting Multiple Coroutines"
 run/main_scene="uid://cakkkw6fca0ru"
 config/features=PackedStringArray("4.8", "GL Compatibility")
 
