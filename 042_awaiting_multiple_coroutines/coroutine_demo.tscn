@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cakkkw6fca0ru"]
+
+[ext_resource type="Script" uid="uid://d1e1eeoeavu6q" path="res://coroutine_demo.gd" id="1_vmigt"]
+
+[node name="CoroutineDemo" type="Node" unique_id=1947469420]
+script = ExtResource("1_vmigt")
