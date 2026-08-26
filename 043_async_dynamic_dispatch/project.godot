@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Spell Animation Dynamic Dispatch Async"
+config/name="Async Dynamic Dispatch"
 run/main_scene="uid://dsbk47ermar6u"
 config/features=PackedStringArray("4.8", "GL Compatibility")
 
