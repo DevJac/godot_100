@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://bh2vjlow3bqb6"]
+
+[ext_resource type="Script" uid="uid://cm712temgcsjs" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://byqiw45uj4gcb" path="res://play_sound_button.gd" id="2_0xm2m"]
+[ext_resource type="AudioStream" uid="uid://ciltnujemwjcj" path="res://sound1.wav" id="3_lquwl"]
+[ext_resource type="AudioStream" uid="uid://nmrvm3o8787c" path="res://sound3.wav" id="4_7mycd"]
+[ext_resource type="AudioStream" uid="uid://dh5tuwki7u0rr" path="res://sound2.wav" id="5_272bh"]
+
+[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_fan46"]
+
+[node name="Main" type="VBoxContainer" unique_id=1783332943]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ig7tw")
+
+[node name="Sound1" type="Button" parent="." unique_id=523136359]
+layout_mode = 2
+text = "Play Sound 1"
+script = ExtResource("2_0xm2m")
+sound = ExtResource("3_lquwl")
+
+[node name="Sound2" type="Button" parent="." unique_id=771718901]
+layout_mode = 2
+text = "Play Sound 2"
+script = ExtResource("2_0xm2m")
+sound = ExtResource("5_272bh")
+
+[node name="Sound3" type="Button" parent="." unique_id=2073300199]
+layout_mode = 2
+text = "Play Sound 3"
+script = ExtResource("2_0xm2m")
+sound = ExtResource("4_7mycd")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1526210214]
+stream = SubResource("AudioStreamPolyphonic_fan46")
