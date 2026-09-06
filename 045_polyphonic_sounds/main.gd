@@ -3,6 +3,13 @@ extends VBoxContainer
 @onready var audio_player: AudioStreamPlayer = $AudioStreamPlayer
 var playback: AudioStreamPlaybackPolyphonic
 
+# AudioStreamPlayer plays AudioStreams, obviously.
+# AudioStreams are more than just sounds, they can be sound generators.
+# In this case, we start an AudioStreamPlayer and it keeps playing--
+# it never stops playing.
+# AudioStreamPolyphonic is what is continuously played.
+# We get the "playback" and can use that to interact with the AudioStream.
+
 func _ready() -> void:
 	audio_player.play()
 	playback = audio_player.get_stream_playback()
